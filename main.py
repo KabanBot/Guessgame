@@ -12,4 +12,28 @@ def humanguess():
         else:
             print(f"Aun te falta  {respuesta}")
 
-humanguess()   
+def computerGuess():
+    bandera=False
+    minimo=0
+    maximo=1000
+    number=random.randrange(minimo,maximo)
+    while(bandera ==False):
+        print(number)
+        respuesta=input("Este es tu numero si , no: ").lower()
+
+        if respuesta=="no":
+            opc=input("Es mayor o menor: ").lower()
+        
+            if opc=="menor":
+                maximo=number
+                nuenum=random.randrange(minimo,maximo)
+                number=nuenum
+            else:
+                minimo=number
+                nuenum=random.randrange(minimo,maximo)
+                number=nuenum
+        else: 
+            bandera=True
+            print("Numero")
+         
+computerGuess()
